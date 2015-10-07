@@ -27,21 +27,22 @@ public class HomeWork1_Main extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Our TextView....Gone in 3 sec...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
-                TextView textView = (TextView) findViewById(R.id.textview1);
-                textView.setVisibility(View.INVISIBLE);
-                Button button = (Button) findViewById(R.id.button);
-                final EditText editText = (EditText) findViewById(R.id.editText);
-
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Snackbar.make(getCurrentFocus(),editText.getText().toString(),Snackbar.LENGTH_LONG).show();
-                    }
-                });
-
             }
         });
+
+        TextView textView = (TextView) findViewById(R.id.textview1);
+        textView.setVisibility(View.INVISIBLE);
+        Button button = (Button) findViewById(R.id.button);
+        final EditText editText = (EditText) findViewById(R.id.editText);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(getCurrentFocus(), editText.getText().toString(), Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 
 
