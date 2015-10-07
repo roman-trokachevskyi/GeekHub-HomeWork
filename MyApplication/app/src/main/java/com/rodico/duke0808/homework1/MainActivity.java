@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 TextView textView = (TextView) findViewById(R.id.textview1);
-                textView.setText("This is my firsssst homework on GeekHub))");
+                textView.setText("This is my first homework on GeekHub))");
 
                 try {
                     Thread.sleep(3000);
