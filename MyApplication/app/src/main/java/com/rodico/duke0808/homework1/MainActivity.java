@@ -28,38 +28,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
-                TextView textView = (TextView) findViewById(R.id.textview1);
-                textView.setText("This is my first homework on GeekHub))");
-
-                Button button = (Button) findViewById(R.id.button);
-                //button.setOnClickListener();
-
-                Context context = getApplicationContext();
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                textView.setText("Hello World!!)");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                textView.setText("Testing....");
-
-
             }
         });
+
+        Button button = (Button) findViewById(R.id.button);
+        final TextView textView = (TextView) findViewById(R.id.textview1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getApplicationContext(),"Hello Toast!",Toast.LENGTH_LONG).show();
+                textView.setVisibility(View.INVISIBLE);
+            }
+        });
+
     }
 
     @Override
@@ -83,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }
