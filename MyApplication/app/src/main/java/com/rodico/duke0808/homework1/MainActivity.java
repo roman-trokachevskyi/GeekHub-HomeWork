@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 textView.setText("Hello World!!)");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                textView.setText("Testing....");
 
 
             }
