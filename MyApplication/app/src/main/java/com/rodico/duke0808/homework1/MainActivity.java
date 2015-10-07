@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView textView = (TextView) findViewById(R.id.textview1);
                 textView.setText("This is my first homework on GeekHub))");
+
+                Button button = (Button) findViewById(R.id.button);
+                //button.setOnClickListener();
+
+                Context context = getApplicationContext();
+                CharSequence text = "Hello toast!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
 
                 try {
                     Thread.sleep(3000);
@@ -72,4 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
