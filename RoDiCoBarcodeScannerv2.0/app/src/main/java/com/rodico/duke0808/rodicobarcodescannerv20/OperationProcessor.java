@@ -5,11 +5,15 @@ import android.widget.Toast;
 
 import com.dropbox.client2.exception.DropboxException;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Date;
 
 /**
@@ -52,77 +56,69 @@ public class OperationProcessor {
 //        fileOutputStream.close();
 //    }
     public void writeOperation(Item item) throws IOException, InterruptedException {
-        File tempFile = File.createTempFile("ttemp.txt",null,HomeActivity.context.getCacheDir());
-        Loader loader = new Loader(tempFile,path);
+        byte[] bytes;
+        ByteArrayOutputStream bOS = new ByteArrayOutputStream();
+        Loader loader = new Loader(bOS,path);
         loader.start();
         loader.join();
-        FileOutputStream fos = new FileOutputStream(tempFile,true);
-        fos.write((item + "\n").toString().getBytes());
-        fos.close();
-        Saver saver = new Saver(path,tempFile);
+        bOS.write(String.valueOf((item.toString()) + "\n").getBytes());
+        bOS.close();
+        bytes=bOS.toByteArray();
+        ByteArrayInputStream bIS = new ByteArrayInputStream(bytes);
+        Saver saver = new Saver(path,bIS);
         saver.start();
         saver.join();
-        tempFile.delete();
-
-    }
-
-    public void saveToDB() throws IOException, DropboxException, InterruptedException {
-        file=File.createTempFile("temp.txt",null,HomeActivity.context.getCacheDir());
-        Saver saver = new Saver(path,file);
-        saver.start();
-        saver.join();
-        file.delete();
     }
 
     public static class Saver extends Thread{
         String path;
         File file;
+        InputStream is;
         public void run() {
-            String currentDateActual = (String) DateFormat.format("dd-MM-yyyy", new Date());
-            FileInputStream fis = null;
+
+
             try {
-                fis = new FileInputStream(file);
-            } catch (FileNotFoundException e) {
+
+                try {
+                    myProgram.mDBApi.putFileOverwrite(path, is, is.available(), null);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (DropboxException e) {
                 e.printStackTrace();
             }
             try {
-
-                myProgram.mDBApi.putFileOverwrite(path, fis, file.length(), null);
-            } catch (DropboxException e) {
+                is.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        public Saver(String path, File file) {
+        public Saver(String path, InputStream is) {
             this.path = path;
             this.file = file;
+            this.is=is;
         }
     }
 
     public class Loader extends Thread{
-        File file;
         String path;
+        OutputStream os;
 
-        public Loader(File file, String path) {
-            this.file = file;
+        public Loader(OutputStream os, String path) {
             this.path = path;
+            this.os=os;
         }
 
         @Override
         public void run() {
-            FileOutputStream fos=null;
             try {
-                fos = new FileOutputStream(file);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            try {
-                myProgram.mDBApi.getFile(path,null,fos,null);
+                myProgram.mDBApi.getFile(path,null,os,null);
             } catch (DropboxException e) {
                 e.printStackTrace();
             }
             try {
-                fos.close();
+                os.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

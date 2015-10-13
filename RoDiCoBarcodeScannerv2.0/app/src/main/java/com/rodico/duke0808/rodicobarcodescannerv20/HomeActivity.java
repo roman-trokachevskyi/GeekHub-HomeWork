@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import com.dropbox.client2.exception.DropboxException;
 import com.dropbox.client2.session.AccessTokenPair;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -127,6 +129,11 @@ public class HomeActivity extends AppCompatActivity {
                 myProgram.accessToken = myProgram.mDBApi.getSession().getOAuth2AccessToken();
             } catch (IllegalStateException e) {
                 Log.i("DbAuthLog", "Error authenticating", e);
+            }
+
+            String currentDateActual = (String) DateFormat.format("dd-MM-yyyy", new Date());
+            if (!currentDateActual.equals(myProgram.opSaleRoDiCo)){
+                myProgram.initProg();
             }
         }
     }

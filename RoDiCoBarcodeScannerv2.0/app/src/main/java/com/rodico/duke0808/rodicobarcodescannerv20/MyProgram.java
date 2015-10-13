@@ -74,4 +74,12 @@ public class MyProgram implements Serializable{
         opGetRoDiCO = new OperationProcessor(defItem,"RoDiCo",Operations.GET);
         opOutRoDiCo = new OperationProcessor(defItem,"RoDiCo",Operations.OUT);
     }
+
+    public long scanBarCode(){
+
+
+
+        return 1111;
+    }
+
 }
