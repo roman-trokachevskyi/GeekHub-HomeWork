@@ -43,6 +43,9 @@ public class WomenActivity extends AppCompatActivity {
         Button outB = (Button) findViewById(R.id.outButton);
         Button getB = (Button) findViewById(R.id.getButton);
 
+        Button scanBT = (Button) findViewById(R.id.scanButton);
+        scanBT.setOnClickListener(scanProduct);
+
         saleB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
