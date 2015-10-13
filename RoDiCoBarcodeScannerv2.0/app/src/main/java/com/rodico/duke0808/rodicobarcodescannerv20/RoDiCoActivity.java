@@ -42,10 +42,10 @@ public class RoDiCoActivity extends AppCompatActivity {
         barCeT=barCodeET;
         final EditText priceET = (EditText) findViewById(R.id.editText3);
         final EditText quantityET = (EditText) findViewById(R.id.editText4);
-        Button saleB = (Button) findViewById(R.id.saleButton);
-        Button returnB = (Button) findViewById(R.id.returnButton);
-        Button outB = (Button) findViewById(R.id.outButton);
-        Button getB = (Button) findViewById(R.id.getButton);
+        final Button saleB = (Button) findViewById(R.id.saleButton);
+        final Button returnB = (Button) findViewById(R.id.returnButton);
+        final Button outB = (Button) findViewById(R.id.outButton);
+        final Button getB = (Button) findViewById(R.id.getButton);
 
         Button scanBT = (Button) findViewById(R.id.scanButton);
         scanBT.setOnClickListener(scanProduct);
@@ -53,58 +53,82 @@ public class RoDiCoActivity extends AppCompatActivity {
         saleB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
-                try {
-                    myProgram.opSaleRoDiCo.writeOperation(item);
-                    //myProgram.opSaleRoDiCo.saveToDB();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if (!(barCodeET.getText().toString().isEmpty()||priceET.getText().toString().isEmpty()||quantityET.getText().toString().isEmpty())) {
+                    Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
+                    saleB.setSelected(true);
+                    try {
+                        myProgram.opSaleRoDiCo.writeOperation(item);
+                        //myProgram.opSaleRoDiCo.saveToDB();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    saleB.setSelected(false);
+                    Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RoDiCoActivity.this, "ПОМИЛКА ВВЕДЕННЯ!!!", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
             }
         });
         returnB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
-                try {
-                    myProgram.opReturnRoDiCo.writeOperation(item);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if (!(barCodeET.getText().toString().isEmpty()||priceET.getText().toString().isEmpty()||quantityET.getText().toString().isEmpty())) {
+                    Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
+                    returnB.setSelected(true);
+                    try {
+                        myProgram.opReturnRoDiCo.writeOperation(item);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    returnB.setSelected(false);
+                    Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RoDiCoActivity.this, "ПОМИЛКА ВВЕДЕННЯ!!!", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
             }
         });
         getB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
-                try {
-                    myProgram.opGetRoDiCO.writeOperation(item);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if (!(barCodeET.getText().toString().isEmpty()||priceET.getText().toString().isEmpty()||quantityET.getText().toString().isEmpty())) {
+                    Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
+                    getB.setSelected(true);
+                    try {
+                        myProgram.opGetRoDiCO.writeOperation(item);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    getB.setSelected(false);
+                    Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RoDiCoActivity.this, "ПОМИЛКА ВВЕДЕННЯ!!!", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
             }
         });
         outB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
-                try {
-                    myProgram.opOutRoDiCo.writeOperation(item);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if (!(barCodeET.getText().toString().isEmpty()||priceET.getText().toString().isEmpty()||quantityET.getText().toString().isEmpty())) {
+                    Item item = new Item(Long.parseLong(barCodeET.getText().toString()),Integer.parseInt(priceET.getText().toString()),Integer.parseInt(quantityET.getText().toString()));
+                    outB.setSelected(true);
+                    try {
+                        myProgram.opOutRoDiCo.writeOperation(item);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    outB.setSelected(false);
+                    Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RoDiCoActivity.this, "ПОМИЛКА ВВЕДЕННЯ!!!", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(RoDiCoActivity.this, "ЗБЕРЕЖЕНО", Toast.LENGTH_LONG).show();
             }
         });
     }

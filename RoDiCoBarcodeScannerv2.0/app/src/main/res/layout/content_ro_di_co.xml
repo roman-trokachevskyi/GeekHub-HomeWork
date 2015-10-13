@@ -74,7 +74,8 @@
         android:textSize="35dp"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/getButton"
-        android:layout_alignStart="@+id/getButton" />
+        android:layout_alignStart="@+id/getButton"
+        />
 
     <Button
         android:layout_width="140dp"
