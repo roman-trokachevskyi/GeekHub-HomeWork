@@ -44,9 +44,13 @@ public class HW2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String sGot = eT.getText().toString();
                 if (sGot!=""&&!sGot.equals("")&&sGot!=null){
-                    BigInteger res = mathClass.factorial(Integer.parseInt(sGot));
-                    String resS = res.toString();
-                    tV.setText(String.valueOf(resS));
+                    if (mathClass.isDigit(sGot)) {
+                        BigInteger res = mathClass.factorial(Integer.parseInt(sGot));
+                        String resS = res.toString();
+                        tV.setText(String.valueOf(resS));
+                    } else {
+                        tV.setText("type int value pls...");
+                    }
                 } else {
                     tV.setText("type smth pls...");
                 }
@@ -57,9 +61,13 @@ public class HW2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String sGot = eT.getText().toString();
                 if (sGot!=""&&!sGot.equals("")&&sGot!=null){
-                    int res = mathClass.fibonachi(Integer.parseInt(sGot));
-                    String resS = String.valueOf(res);
-                    tV.setText(String.valueOf(resS));
+                    if (mathClass.isDigit(sGot)) {
+                        int res = mathClass.fibonachi(Integer.parseInt(sGot));
+                        String resS = String.valueOf(res);
+                        tV.setText(String.valueOf(resS));
+                    } else {
+                        tV.setText("type int value pls...");
+                    }
                 } else {
                     tV.setText("type smth pls...");
                 }
@@ -101,6 +109,15 @@ public class HW2Activity extends AppCompatActivity {
             }
 
             return list.get(n);
+        }
+
+        private boolean isDigit(String s){
+            try {
+                Integer.parseInt(s);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
         }
     }
 
