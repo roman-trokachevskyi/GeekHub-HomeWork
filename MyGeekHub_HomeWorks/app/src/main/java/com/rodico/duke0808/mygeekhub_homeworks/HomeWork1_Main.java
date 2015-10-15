@@ -1,5 +1,6 @@
 package com.rodico.duke0808.mygeekhub_homeworks;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class HomeWork1_Main extends AppCompatActivity {
+    static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class HomeWork1_Main extends AppCompatActivity {
                 Snackbar.make(getCurrentFocus(), editText.getText().toString(), Snackbar.LENGTH_LONG).show();
             }
         });
-
+        activity=this;
 
     }
 

@@ -1,5 +1,6 @@
 package com.rodico.duke0808.mygeekhub_homeworks;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,9 +8,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BrowserActivity extends AppCompatActivity {
+    List<HomeWorkItem> myHWList;
+    HwAdapter hwAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +34,30 @@ public class BrowserActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Button hw1BT =(Button) findViewById(R.id.lesson1BT);
-        hw1BT.setOnClickListener(new View.OnClickListener() {
+
+        ListView listView = (ListView) findViewById(R.id.myHWView);
+        init();
+        listView.setAdapter(hwAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BrowserActivity.this,HomeWork1_Main.class);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HomeWorkItem item = (HomeWorkItem) parent.getItemAtPosition(position);
+                startActivity(item.getIntent());
             }
         });
-        Button hw2button = (Button) findViewById(R.id.hw2button);
-        hw2button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BrowserActivity.this,HW2Activity.class);
-                startActivity(intent);
-            }
-        });
+
+    }
+
+    public void init(){
+
+        myHWList = new ArrayList<>();
+        HomeWorkItem homeWorkItem1=new HomeWorkItem("Home Work 1",this,HomeWork1_Main.class);
+        HomeWorkItem homeWorkItem2=new HomeWorkItem("Home Work 2",this,HW2Activity.class);
+        myHWList.add(homeWorkItem1);
+        myHWList.add(homeWorkItem2);
+
+        hwAdapter = new HwAdapter(myHWList,this);
     }
 
 }

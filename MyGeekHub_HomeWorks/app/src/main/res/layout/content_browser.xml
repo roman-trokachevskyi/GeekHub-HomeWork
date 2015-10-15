@@ -10,22 +10,11 @@
     tools:showIn="@layout/activity_browser"
     tools:context="com.rodico.duke0808.mygeekhub_homeworks.BrowserActivity">
 
-    <Button
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HomeWork#1"
-        android:id="@+id/lesson1BT"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HomeWork2"
-        android:id="@+id/hw2button"
-        android:layout_below="@+id/lesson1BT"
+        android:id="@+id/myHWView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:singleLine="false" />
+        android:choiceMode="singleChoice" />
 </RelativeLayout>

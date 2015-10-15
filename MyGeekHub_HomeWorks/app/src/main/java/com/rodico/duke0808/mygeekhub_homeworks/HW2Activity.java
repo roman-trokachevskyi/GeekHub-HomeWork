@@ -1,5 +1,6 @@
 package com.rodico.duke0808.mygeekhub_homeworks;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class HW2Activity extends AppCompatActivity {
+    static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class HW2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_hw2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        activity=this;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
