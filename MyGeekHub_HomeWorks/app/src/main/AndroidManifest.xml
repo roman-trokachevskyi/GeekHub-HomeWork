@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".HomeWork1_Main"
+            android:name=".HomeWorks.HomeWork1_Main"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BrowserActivity"
+            android:name=".Browser.BrowserActivity"
             android:label="@string/title_activity_browser"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -27,9 +27,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HW2Activity"
+            android:name=".HomeWorks.HW2Activity"
             android:label="@string/title_activity_hw2"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".HomeWorks.HomeWork3" >
         </activity>
     </application>
 

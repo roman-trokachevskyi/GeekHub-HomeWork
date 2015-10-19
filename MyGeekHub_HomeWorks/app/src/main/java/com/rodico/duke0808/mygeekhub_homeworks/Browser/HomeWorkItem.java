@@ -1,4 +1,4 @@
-package com.rodico.duke0808.mygeekhub_homeworks;
+package com.rodico.duke0808.mygeekhub_homeworks.Browser;
 
 import android.content.Context;
 import android.content.Intent;

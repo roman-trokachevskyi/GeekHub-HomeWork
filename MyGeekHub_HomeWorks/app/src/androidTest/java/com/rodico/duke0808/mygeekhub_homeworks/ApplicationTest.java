@@ -3,6 +3,8 @@ package com.rodico.duke0808.mygeekhub_homeworks;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HW2Activity;
+
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */

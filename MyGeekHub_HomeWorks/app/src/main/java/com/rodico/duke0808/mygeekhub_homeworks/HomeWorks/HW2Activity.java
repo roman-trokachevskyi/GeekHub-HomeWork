@@ -1,4 +1,4 @@
-package com.rodico.duke0808.mygeekhub_homeworks;
+package com.rodico.duke0808.mygeekhub_homeworks.HomeWorks;
 
 import android.app.Activity;
 import android.content.Intent;

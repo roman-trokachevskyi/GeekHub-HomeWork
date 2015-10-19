@@ -1,4 +1,4 @@
-package com.rodico.duke0808.mygeekhub_homeworks;
+package com.rodico.duke0808.mygeekhub_homeworks.HomeWorks;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 public class HomeWork1_Main extends AppCompatActivity {
     static Activity activity;

@@ -1,7 +1,5 @@
-package com.rodico.duke0808.mygeekhub_homeworks;
+package com.rodico.duke0808.mygeekhub_homeworks.Browser;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
+
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HW2Activity;
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork1_Main;
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork3;
+import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,7 @@ public class BrowserActivity extends AppCompatActivity {
         HomeWorkItem homeWorkItem2=new HomeWorkItem("Home Work 2",this,HW2Activity.class);
         myHWList.add(homeWorkItem1);
         myHWList.add(homeWorkItem2);
+        myHWList.add(new HomeWorkItem("Home Work 3 (Collections)",this, HomeWork3.class));
 
         hwAdapter = new HwAdapter(myHWList,this);
     }
