@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".HomeWorks.HomeWork3" >
         </activity>
+        <activity android:name=".HomeWorks.HomeWork4.Hw4_activity" >
+        </activity>
     </application>
 
 </manifest>

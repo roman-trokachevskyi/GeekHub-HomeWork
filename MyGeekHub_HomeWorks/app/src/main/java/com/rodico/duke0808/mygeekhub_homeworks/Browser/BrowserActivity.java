@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HW2Activity;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork1_Main;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork3;
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4.Hw4_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 import java.util.ArrayList;
@@ -59,6 +60,7 @@ public class BrowserActivity extends AppCompatActivity {
         myHWList.add(homeWorkItem1);
         myHWList.add(homeWorkItem2);
         myHWList.add(new HomeWorkItem("Home Work 3 (Collections)",this, HomeWork3.class));
+        myHWList.add(new HomeWorkItem("Home Work 4 (ООП)",this, Hw4_activity.class));
 
         hwAdapter = new HwAdapter(myHWList,this);
     }
