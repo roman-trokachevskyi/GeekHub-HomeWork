@@ -8,8 +8,6 @@ import android.widget.Button;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 public class Hw4_activity extends BaseActivity {
-    Button nextBt;
-    Button prevBt;
     @Override
     public Boolean isAddFragment() {
         return true;
