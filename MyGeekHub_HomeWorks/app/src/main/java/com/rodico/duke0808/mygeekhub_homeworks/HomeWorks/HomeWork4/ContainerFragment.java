@@ -15,7 +15,7 @@ import com.rodico.duke0808.mygeekhub_homeworks.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContainerFragment extends Fragment {
+public class ContainerFragment extends Fragment implements MyDemonstrator {
     FrameLayout container;
     FragmentManager fragmentManager;
     SecondFragment secondFragment;
@@ -69,10 +69,5 @@ public class ContainerFragment extends Fragment {
 
     public void setFragmentManager(FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
-    }
-
-    public void getButtons(Button nextBt, Button prevBt) {
-        nextBt = this.nextBt;
-        prevBt = this.prevBt;
     }
 }
