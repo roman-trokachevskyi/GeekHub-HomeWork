@@ -9,6 +9,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_browser"
     tools:context="com.rodico.duke0808.mygeekhub_homeworks.Browser.BrowserActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:alpha="0.3"
+        android:src="@drawable/logo_bck"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
 
     <ListView
         android:layout_width="wrap_content"
@@ -18,4 +26,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="false" />
+
 </RelativeLayout>

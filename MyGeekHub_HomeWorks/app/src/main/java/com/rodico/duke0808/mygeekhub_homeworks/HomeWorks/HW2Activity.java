@@ -79,7 +79,7 @@ public class HW2Activity extends AppCompatActivity {
 
     }
 
-    static class MathClass{
+    public static class MathClass{
         public static final MathClass mathClass;
         static {
             mathClass = new MathClass();
@@ -89,7 +89,7 @@ public class HW2Activity extends AppCompatActivity {
             return mathClass;
         }
 
-        BigInteger factorial(int n){
+        public BigInteger factorial(int n){
             BigInteger res = BigInteger.valueOf(1);
             for (int i=1;i<=n;i++){
                 res=res.multiply(BigInteger.valueOf(i));
@@ -97,7 +97,7 @@ public class HW2Activity extends AppCompatActivity {
             return res;
         }
 
-        int fibonachi(int n){
+        public int fibonachi(int n){
             ArrayList<Integer> list = new ArrayList<>();
             list.add(1);
             list.add(1);
