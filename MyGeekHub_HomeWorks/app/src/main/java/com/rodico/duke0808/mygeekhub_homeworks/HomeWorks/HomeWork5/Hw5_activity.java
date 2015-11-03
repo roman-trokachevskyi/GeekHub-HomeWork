@@ -27,7 +27,7 @@ import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4.Hw4_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 public class Hw5_activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Animation.AnimationListener{
+        implements NavigationView.OnNavigationItemSelectedListener{
     TextView fadeTv;
     TextView bounceTv;
     TextView rotateTv;
@@ -74,6 +74,9 @@ public class Hw5_activity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 fadeTv.startAnimation(fade);
+                bounceTv.startAnimation(bounce);
+                scaleTv.startAnimation(scale);
+                rotateTv.startAnimation(rotate);
             }
         });
     }
@@ -137,44 +140,5 @@ public class Hw5_activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    /**
-     * <p>Notifies the start of the animation.</p>
-     *
-     * @param animation The started animation.
-     */
-    @Override
-    public void onAnimationStart(Animation animation) {
-
-    }
-
-    /**
-     * <p>Notifies the end of the animation. This callback is not invoked
-     * for animations with repeat count set to INFINITE.</p>
-     *
-     * @param animation The animation which reached its end.
-     */
-    @Override
-    public void onAnimationEnd(Animation animation) {
-        if (animation==fade){
-            bounceTv.startAnimation(bounce);
-        } else if (animation==bounce){
-            scaleTv.startAnimation(scale);
-        } else if (animation==scale){
-            rotateTv.startAnimation(rotate);
-        } else if (animation==rotate){
-
-        }
-    }
-
-    /**
-     * <p>Notifies the repetition of the animation.</p>
-     *
-     * @param animation The animation which was repeated.
-     */
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-
     }
 }
