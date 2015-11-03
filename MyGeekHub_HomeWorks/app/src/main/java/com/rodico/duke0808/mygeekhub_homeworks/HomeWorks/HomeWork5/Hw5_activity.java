@@ -134,8 +134,16 @@ public class Hw5_activity extends AppCompatActivity
             case R.id.nav_hw4:
                 intent = new Intent(this, Hw4_activity.class);
                 break;
+            case R.id.nav_share:
+                Toast.makeText(Hw5_activity.this, "dummy share))", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_send:
+                Toast.makeText(Hw5_activity.this, "dummy send))", Toast.LENGTH_SHORT).show();
+                break;
         }
-        startActivity(intent);
+        if (intent!=null) {
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
