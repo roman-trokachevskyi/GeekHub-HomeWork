@@ -13,8 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nineoldandroids.animation.Animator;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HW2Activity;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork1_Main;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork3;
@@ -22,7 +27,19 @@ import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4.Hw4_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 public class Hw5_activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Animation.AnimationListener{
+    TextView fadeTv;
+    TextView bounceTv;
+    TextView rotateTv;
+    TextView scaleTv;
+
+    Animation fade;
+    Animation bounce;
+    Animation rotate;
+    Animation scale;
+
+    Button startAnim;
+    Button stopAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +56,26 @@ public class Hw5_activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fadeTv = (TextView) findViewById(R.id.fade_in_tv);
+        bounceTv = (TextView) findViewById(R.id.bounce_tv);
+        rotateTv = (TextView) findViewById(R.id.rotate_tv);
+        scaleTv = (TextView) findViewById(R.id.scale_tv);
+
+        fade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_out);
+        bounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        rotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        scale = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+
+        startAnim = (Button) findViewById(R.id.start_anim_bt);
+        stopAnim = (Button) findViewById(R.id.stop_anim_bt);
+
+        startAnim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fadeTv.startAnimation(fade);
+            }
+        });
     }
 
     @Override
@@ -100,5 +137,44 @@ public class Hw5_activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * <p>Notifies the start of the animation.</p>
+     *
+     * @param animation The started animation.
+     */
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    /**
+     * <p>Notifies the end of the animation. This callback is not invoked
+     * for animations with repeat count set to INFINITE.</p>
+     *
+     * @param animation The animation which reached its end.
+     */
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        if (animation==fade){
+            bounceTv.startAnimation(bounce);
+        } else if (animation==bounce){
+            scaleTv.startAnimation(scale);
+        } else if (animation==scale){
+            rotateTv.startAnimation(rotate);
+        } else if (animation==rotate){
+
+        }
+    }
+
+    /**
+     * <p>Notifies the repetition of the animation.</p>
+     *
+     * @param animation The animation which was repeated.
+     */
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
     }
 }
