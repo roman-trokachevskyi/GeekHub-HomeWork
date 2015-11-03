@@ -1,0 +1,3 @@
+tools:showIn="@layout/activity_browser"
+    tools:context="com.rodico.duke0808.mygeekhub_homeworks.Browser.BrowserActivity"
+    xmlns:tools="http://schemas.android.com/tools"

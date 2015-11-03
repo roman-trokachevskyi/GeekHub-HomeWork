@@ -22,7 +22,11 @@ public class HomeWorkItem {
         numberAtAll++;
         this.number=numberAtAll;
         dateOnComplite=new Date();
-        intent = new Intent(context, cls);
+        if (cls!=null){
+        intent = new Intent(context, cls);}
+        else {
+            intent=null;
+        }
     }
 
     @Override

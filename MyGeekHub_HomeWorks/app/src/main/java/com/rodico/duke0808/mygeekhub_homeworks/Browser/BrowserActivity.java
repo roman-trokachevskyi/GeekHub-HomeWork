@@ -1,18 +1,19 @@
 package com.rodico.duke0808.mygeekhub_homeworks.Browser;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HW2Activity;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork1_Main;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork3;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4.Hw4_activity;
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 import java.util.ArrayList;
@@ -29,24 +30,21 @@ public class BrowserActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         ListView listView = (ListView) findViewById(R.id.myHWView);
         init();
-        listView.setAdapter(hwAdapter);
+        SwingBottomInAnimationAdapter animationAdapter = new SwingBottomInAnimationAdapter(hwAdapter);
+        animationAdapter.setAbsListView(listView);
+        listView.setAdapter(animationAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HomeWorkItem item = (HomeWorkItem) parent.getItemAtPosition(position);
-                startActivity(item.getIntent());
+                if (item.getIntent()!=null) {
+                    startActivity(item.getIntent());
+                } else {
+                    Toast.makeText(BrowserActivity.this, "Maybe next time...", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -61,6 +59,20 @@ public class BrowserActivity extends AppCompatActivity {
         myHWList.add(homeWorkItem2);
         myHWList.add(new HomeWorkItem("Home Work 3 (Collections)",this, HomeWork3.class));
         myHWList.add(new HomeWorkItem("Home Work 4 (ООП)",this, Hw4_activity.class));
+        myHWList.add(new HomeWorkItem("Home Work 5 (Anim & UI)",this, Hw5_activity.class));
+        myHWList.add(new HomeWorkItem("Home Work 6 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 7 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 8 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 9 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 10 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 11 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 12 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 13 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 14 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 15 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 16 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 17 ",this, null));
+        myHWList.add(new HomeWorkItem("Home Work 18 ",this, null));
 
         hwAdapter = new HwAdapter(myHWList,this);
     }

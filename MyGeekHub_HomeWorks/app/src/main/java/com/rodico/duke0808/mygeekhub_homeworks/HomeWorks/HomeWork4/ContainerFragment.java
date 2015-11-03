@@ -1,6 +1,7 @@
 package com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ViewAnimator;
 
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 

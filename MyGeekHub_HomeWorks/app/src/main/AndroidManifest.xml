@@ -15,6 +15,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity" />
         </activity>
         <activity
             android:name=".Browser.BrowserActivity"
@@ -30,10 +33,28 @@
             android:name=".HomeWorks.HW2Activity"
             android:label="@string/title_activity_hw2"
             android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity" />
         </activity>
         <activity android:name=".HomeWorks.HomeWork3" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity" />
         </activity>
         <activity android:name=".HomeWorks.HomeWork4.Hw4_activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity" />
+        </activity>
+        <activity
+            android:name=".HomeWorks.HomeWork5.Hw5_activity"
+            android:label="@string/title_activity_hw5_activity"
+            android:parentActivityName=".Browser.BrowserActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodico.duke0808.mygeekhub_homeworks.Browser.BrowserActivity" />
         </activity>
     </application>
 
