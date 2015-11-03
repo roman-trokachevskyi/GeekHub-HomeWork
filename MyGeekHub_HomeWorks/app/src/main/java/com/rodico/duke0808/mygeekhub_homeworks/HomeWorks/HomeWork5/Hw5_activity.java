@@ -39,7 +39,6 @@ public class Hw5_activity extends AppCompatActivity
     Animation scale;
 
     Button startAnim;
-    Button stopAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +67,6 @@ public class Hw5_activity extends AppCompatActivity
         scale = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
 
         startAnim = (Button) findViewById(R.id.start_anim_bt);
-        stopAnim = (Button) findViewById(R.id.stop_anim_bt);
 
         startAnim.setOnClickListener(new View.OnClickListener() {
             @Override
