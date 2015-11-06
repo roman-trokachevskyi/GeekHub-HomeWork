@@ -1,6 +1,7 @@
 package com.rodico.duke0808.mygeekhub_homeworks.HomeWorks;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 public class HomeWork1_Main extends AppCompatActivity {
@@ -29,8 +31,7 @@ public class HomeWork1_Main extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Our TextView....Gone in 3 sec...", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(getApplicationContext(), Hw5_activity.class));
             }
         });
 
