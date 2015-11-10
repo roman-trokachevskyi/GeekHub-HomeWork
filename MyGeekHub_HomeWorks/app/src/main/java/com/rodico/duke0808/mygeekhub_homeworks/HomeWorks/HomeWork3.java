@@ -2,6 +2,7 @@ package com.rodico.duke0808.mygeekhub_homeworks.HomeWorks;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +28,12 @@ public class HomeWork3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_work3);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         TextView tv1 = (TextView) findViewById(R.id.arrayTv);
         resTv = (TextView) findViewById(R.id.resTv);
         Button reverseBt = (Button) findViewById(R.id.reverseBt);
@@ -99,5 +106,10 @@ public class HomeWork3 extends AppCompatActivity {
         for (int i=0;i<values.length;i++){
             values[i]=valRecovery[i];
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 }

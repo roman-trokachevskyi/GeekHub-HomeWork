@@ -29,7 +29,8 @@
         android:id="@+id/bounce_tv"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp" />
+        android:layout_margin="15dp"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,7 +40,8 @@
         android:id="@+id/scale_tv"
         android:layout_below="@+id/bounce_tv"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp" />
+        android:layout_margin="15dp"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +51,8 @@
         android:id="@+id/rotate_tv"
         android:layout_below="@+id/scale_tv"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp" />
+        android:layout_margin="15dp"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,5 +62,6 @@
         android:id="@+id/fade_in_tv"
         android:layout_above="@+id/bounce_tv"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp" />
+        android:layout_margin="15dp"
+        android:textColor="#000000" />
 </RelativeLayout>
