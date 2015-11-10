@@ -20,6 +20,7 @@ import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork1_Main;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork3;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork4.Hw4_activity;
 import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork5.Hw5_activity;
+import com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork6.Hw6_Mainctivity;
 import com.rodico.duke0808.mygeekhub_homeworks.R;
 
 import io.fabric.sdk.android.Fabric;
@@ -82,7 +83,7 @@ public class BrowserActivity extends AppCompatActivity {
         myHWList.add(new HomeWorkItem("Home Work 3 (Collections)",context, HomeWork3.class));
         myHWList.add(new HomeWorkItem("Home Work 4 (ООП)",context, Hw4_activity.class));
         myHWList.add(new HomeWorkItem("Home Work 5 (Anim & UI)",context, Hw5_activity.class));
-        myHWList.add(new HomeWorkItem("Home Work 6 ",context, null));
+        myHWList.add(new HomeWorkItem("Home Work 6 (Flexible UI)",context, Hw6_Mainctivity.class));
         myHWList.add(new HomeWorkItem("Home Work 7 ",context, null));
         myHWList.add(new HomeWorkItem("Home Work 8 ",context, null));
         myHWList.add(new HomeWorkItem("Home Work 9 ",context, null));

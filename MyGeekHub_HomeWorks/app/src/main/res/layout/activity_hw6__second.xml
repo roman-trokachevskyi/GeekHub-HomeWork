@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork6.Hw6_SecondActivity">
-    
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="15"></Toolbar>
 
-    <fragment
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.rodico.duke0808.mygeekhub_homeworks.HomeWorks.HomeWork6.SecondFragment"
-        android:id="@+id/fragment"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        tools:layout="@layout/fragment_second2" />
+        android:id="@+id/hw6_second_container"
+        android:layout_below="@+id/my_toolbar"></FrameLayout>
+
+
 </RelativeLayout>
